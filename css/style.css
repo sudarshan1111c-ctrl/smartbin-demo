@@ -1,0 +1,105 @@
+/* SmartBin global styles */
+:root {
+  --deep-forest: #123D2B;
+  --emerald: #16A36A;
+  --light-green: #E8F5EC;
+  --warm-white: #FAFCF8;
+  --dark-text: #17251D;
+  --gold: #D9B45B;
+}
+
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--light-green);
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--deep-forest) !important;
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: var(--warm-white) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--emerald);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--deep-forest);
+}
+
+/* Cards */
+.card {
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+  background-color: var(--deep-forest);
+  color: var(--warm-white);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  min-width: 250px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1050;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast-success { background-color: var(--emerald); }
+.toast-error { background-color: #E74C3C; }
+.toast-info { background-color: var(--deep-forest); }
+
+/* Simple animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.slide-up {
+  animation: slideUp 0.4s ease forwards;
+}
+
+/* Responsive helpers */
+@media (max-width: 576px) {
+  .navbar .navbar-brand { font-size: 1rem; }
+  .btn { font-size: 0.9rem; }
+}
